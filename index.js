@@ -15,7 +15,7 @@ process.argv.forEach(function(arg, index, array) {
 for (let i = 0; i < numTimes; i++) {
     if (magicItemMode) {
         item = cosGenerator.generateMinorMagicItem();
-        console.log(`${item.description} and ${item.magicalPower}`);
+        console.log(`${item.description} that ${item.magicalPower}`);
     }
     else {
         console.log(cosGenerator.generateTrinket());

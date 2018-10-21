@@ -50,7 +50,7 @@ function generateTrinket(randomIntFunc) {
         'A black wooden pipe that creates puffs of smoke that look like skulls',
         'A vial of perfume, the scent of which only certain creatures can detect'
     ]
-    return trinkets[randomInt()];
+    return trinkets[randomInt(trinkets.length)];
 }
 
 function generateMagicPower(rFunc) {
@@ -59,9 +59,14 @@ function generateMagicPower(rFunc) {
     let magicPowerList = [
         'casts Burning Hands 1/day (caster level 3; cast at level 2; DC 13; pg 220)',
         'casts Augury (caster level 3; pg 215;)',
-        'casts Light (pg 255;)'
+        'casts Light (pg 255;)',
+        'keeps the user warm even in freezing temperatures',
+        'makes your eyes glow red while wielding',
+        'casts Mending (pg 259)',
+        'casts levitate (caster level 3; DC 13; pg 255)',
+        'casts Mordenkainen\'s Sword (caster level 7; pg 262)'
     ]
-    return magicPowerList[randomInt(3)]
+    return magicPowerList[randomInt(magicPowerList.length)];
 }
 
 function generateMinorMagicItem() {
