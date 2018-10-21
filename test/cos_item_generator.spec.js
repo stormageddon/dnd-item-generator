@@ -41,4 +41,20 @@ describe('Curse of Strahd Minor Item Generator Tests', function() {
         assert.ok(typeof trinket === 'string');
         assert.ok(trinket.length > 0);
     })
+
+    it('Should generate a minor magic item object', function() {
+        let trinket = cosGenerator.generateMinorMagicItem();
+        assert.ok(typeof trinket === 'object');
+        assert.ok(trinket.description);
+        assert.ok(trinket.magicalPower);
+    });
+
+    it('Should generate random magic powers', function() {
+        let power1 = cosGenerator.generateMagicPower(fakeRandom),
+            power2 = cosGenerator.generateMagicPower(fakeRandom);
+
+            assert.ok(power1 !== power2);
+            assert.ok(power1 === 'casts Burning Hands 1/day (caster level 3; cast at level 2; DC 13; pg 220)');
+            assert.ok(power2 === 'casts Augury (caster level 3; pg 215;)');
+    });
 });

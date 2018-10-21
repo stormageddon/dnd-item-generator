@@ -53,15 +53,32 @@ function generateTrinket(randomIntFunc) {
     return trinkets[randomInt()];
 }
 
-function getMinorItem() {
-    return generateTrinket(Math.random);
+function generateMagicPower(rFunc) {
+    randomInt = rFunc || getRandomInt;
+
+    let magicPowerList = [
+        'casts Burning Hands 1/day (caster level 3; cast at level 2; DC 13; pg 220)',
+        'casts Augury (caster level 3; pg 215;)',
+        'casts Light (pg 255;)'
+    ]
+    return magicPowerList[randomInt(3)]
 }
 
-function getRandomInt() {
-    MAX = 50;
+function generateMinorMagicItem() {
+    let minorItem = {
+        description: generateTrinket(),
+        magicalPower: generateMagicPower()
+    }
+    return minorItem;
+}
+
+function getRandomInt(max) {
+    MAX = max || 50;
     return Math.floor(Math.random() * Math.floor(MAX));
   }
 
 module.exports = {
-    generateTrinket: generateTrinket
+    generateTrinket: generateTrinket,
+    generateMinorMagicItem,
+    generateMagicPower
 }
