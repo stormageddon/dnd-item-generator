@@ -1,0 +1,1 @@
+Based on the excellent random D&D generators by Mike Shea (Slyflourish). Check all of his generators out here https://slyflourish.com/random_generators/
