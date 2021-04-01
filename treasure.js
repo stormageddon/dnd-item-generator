@@ -544,6 +544,30 @@ const items = [
         rarity: "Uncommon",
         type: "Wand",
         source: "dmg"
+    },
+    {
+        name: "Potion of storm giant strength",
+        rarity: "Legendary",
+        type: "Potion",
+        source: "dmg"
+    },
+    {
+        name: "Sovereign glue",
+        rarity: "Legendary",
+        type: "Wondrous item",
+        source: "dmg"
+    },
+    {
+        name: "Spell scroll (9th level)",
+        rarity: "Legendary",
+        type: "Scroll",
+        source: "dmg"
+    },
+    {
+        name: "Universal solvent",
+        rarity: "Legendary",
+        type: "Wondrous Item",
+        source: "dmg"
     }
 ];
 
@@ -567,6 +591,10 @@ const getItem = function(options) {
         item = items[Math.floor(Math.random() * items.length)];
     }
 
+    return item;
+}
+
+const printItem = function(item) {
     console.log(`Name: ${item.name}`);
     console.log(`Rarity: ${item.rarity}`);
     console.log(`Type: ${item.type}`);
@@ -588,7 +616,6 @@ process.argv.forEach(function (val, index, array) {
             options.source = array[index + 1];
             break;
     }
-
 });
-console.log(options)
-getItem(options);
+
+printItem(getItem(options));
